@@ -1,0 +1,160 @@
+/* Dark Green - #428643 */
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('/Users/jayanderson/Desktop/Bea Week Summary');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+    font-family: 'Fraunces', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center;
+    margin: 0;
+    padding-top: 20px;  /* Add some padding to the top */
+    flex-direction: column;
+}
+
+.container {
+    width: 95%;
+    max-width: 1500px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+/* Flexbox layout for all days in a single row */
+.planner {
+    display: flex;
+    gap: 7px;
+    margin-top: 20px;
+    justify-content: space-between; /* Space out the days evenly */
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: nowrap; /* Ensure no wrapping to a second line */
+    width: 100%;
+}
+
+.day {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align children to the top */
+    flex: 1 1 13%;           /* Ensures the day cell is the same size */
+    height: auto;            /* Let the day cell grow as needed */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.day h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    background-color: #4a6741;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.container .planner .day .task-input {
+    padding: 5px;               
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;                /* Takes up full width of the day cell */
+    height: auto;               /* Allow the input field to adjust its height based on content */
+    line-height: 1.2em;         /* Control the line height for the text */
+    font-size: 14px;            /* Ensure consistent font size */
+    resize: none;               /* Prevent resizing of input box */
+    flex-shrink: 0;             /* Prevent shrinking */
+    flex-grow: 0;               /* Prevent growing */
+    box-sizing: border-box;     /* Ensure padding is included in height */
+    min-height: 30px;           /* Ensure it starts at a reasonable height */
+    overflow: hidden;           /* Prevent scrollbars from appearing in the text field */
+}
+
+.add-btn {
+    padding: 5px 10px;
+    background-color: 	#4a6741;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 50%; /* Make the button fill the available width */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    width: 100%; /* Ensure the task list stays within the day cell */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    flex-grow: 1; /* Allow list to grow but not affect other days */
+    max-height: calc(100% - 150px); /* Limit the height of the task list, leaving space for the input and button */
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    width: 100%; /* Keep each list item within the width of the container */
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 5px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.check-btn, .delete-btn {
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+    background-color: #374f2f;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.check-btn {
+    background-color: #4a6741; /* Green for the check button */
+}
+
+.delete-btn {
+    background-color: #e0473c; /* Red for the delete button */
+}
+
+
+.checked {
+    background-color: #4a6741;
+    color: white;
+}
