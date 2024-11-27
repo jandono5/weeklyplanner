@@ -36,6 +36,41 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// drop down 
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdown = document.querySelector('.dropdown');
+    const dropbtn = dropdown.querySelector('.dropbtn');
+    const defaultLink = dropdown.querySelector('.default-link');
+    const dropdownContent = dropdown.querySelector('.dropdown-content');
+
+    // Set the button's text to match the default link on page load
+    dropbtn.textContent = defaultLink.textContent;
+
+    // Hide the default link when the dropdown is hovered
+    dropdown.addEventListener('mouseover', function () {
+        defaultLink.classList.add('hidden'); // Hide the default link
+    });
+
+    // Show the default link again when the dropdown is not hovered
+    dropdown.addEventListener('mouseleave', function () {
+        defaultLink.classList.remove('hidden'); // Show the default link
+    });
+
+    // Update button text dynamically if another link is clicked
+    const dropdownLinks = dropdown.querySelectorAll('.dropdown-content a');
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            dropbtn.textContent = this.textContent;
+        });
+    });
+});
+
+
+
+
+
+
+
 function addTaskToDay(dayDiv, taskText, isChecked = false) {
     const taskList = dayDiv.querySelector('.task-list');
     const li = document.createElement('li');

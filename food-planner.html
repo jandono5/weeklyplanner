@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Planner</title>
+    <!-- Favicon as an emoji -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext x='0' y='25' font-size='24'%3E❤️%3C/text%3E%3C/svg%3E">
+    <link href="https://github.com/undercasetype/Fraunces/releases/tag/1.000" rel="stylesheet">
+    <link rel="stylesheet" href="food-planner-style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Drop Down-->
+        <div class="dropdown">
+          <button class="dropbtn">bj meal plan!</button>
+          <div class="dropdown-content">
+            <a class="default-link" href="food-planner.html">bj meal plan!</a>
+            <a href="index.html">bj weekly planner!</a>
+          </div>
+        </div>
+        
+        <h2>like word but a lil' more personal...</h2>
+
+       
+        <div class="food-planner">
+            
+            <div class="meal-plan">
+                <h2>meal plan</h2>
+                <div class="days">
+                    
+                    <div class="day">
+                        <h3>monday</h3>
+                        <input type="text" class="meal-input" placeholder="monday meal...">
+                    </div>
+                    <div class="day">
+                        <h3>tuesday</h3>
+                        <input type="text" class="meal-input" placeholder="tuesday meal...">
+                    </div>
+                    <div class="day">
+                        <h3>wednesday</h3>
+                        <input type="text" class="meal-input" placeholder="wednesday meal...">
+                    </div>
+                    <div class="day">
+                        <h3>thursday</h3>
+                        <input type="text" class="meal-input" placeholder="thursday meal...">
+                    </div>
+                    <div class="day">
+                        <h3>friday</h3>
+                        <input type="text" class="meal-input" placeholder="friday meal...">
+                    </div>
+                    <div class="day">
+                        <h3>saturday</h3>
+                        <input type="text" class="meal-input" placeholder="saturday meal...">
+                    </div>
+                    <div class="day">
+                        <h3>sunday</h3>
+                        <input type="text" class="meal-input" placeholder="sunday meal...">
+                    </div>
+                </div>
+                
+                <button id="clear-meal-plan" class="clear-btn">clear all</button> 
+            </div>
+        </div>
+
+    </div>
+    <script src="food-planner-script.js"></script>
+</body>
+</html>

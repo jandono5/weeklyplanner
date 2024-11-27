@@ -1,4 +1,4 @@
-/* Dark Green - #428643 */
+/* Font and color setup */
 @font-face {
   font-family: 'Fraunces';
   src: url('/Users/jayanderson/Desktop/Bea Week Summary');
@@ -6,6 +6,7 @@
   font-style: normal;
 }
 
+/***************** DROP DOWN *****************/
 
 .default-link {
   font-weight: bold;
@@ -23,6 +24,7 @@
 /* Dropdown Button */
 .dropbtn {
   background-color: #f8f8fb;
+  color: black;
   padding: 16px;
   font-family: 'Fraunces', sans-serif;  
   font-weight: bold;
@@ -35,16 +37,14 @@
   cursor: pointer; 
 }
 
-/* Dropdown Container */
 .dropdown {
   position: relative;
   display: inline-block;
   font-family: 'Fraunces', sans-serif;
   font-weight: bold;
-  font-size: 32px; /* Matches dropdown button size */
+  font-size: 32px; 
 }
 
-/* Dropdown Content */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -55,11 +55,9 @@
   text-align: center;
   font-family: 'Fraunces', sans-serif;
   font-weight: bold;
-  border-radius: 0 0 10px 10px; 
-  overflow: hidden;
 }
 
-/* Links inside the dropdown */
+
 .dropdown-content a {
   font-family: 'Fraunces', sans-serif;
   font-weight: bold;
@@ -73,13 +71,11 @@
   transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
-/* Change color of dropdown links on hover */
 .dropdown-content a:hover {
   background-color: #ddd;
   color: black;
 }
 
-/* Highlight for default link */
 .default-link {
   font-weight: bold;
   background-color: #ddd; 
@@ -89,7 +85,6 @@
   background-color: #ccc;
 }
 
-/* Show dropdown content on hover */
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -97,7 +92,7 @@
 /* Change background color of the dropdown button on hover */
 .dropdown:hover .dropbtn {
   background-color: #4a6741;
-  color: white;
+  color: white; 
 }
 
 
@@ -106,18 +101,18 @@ body {
     background-color: #f8f9fa;
     color: #333;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     margin: 0;
-    padding-top: 20px;
+    padding: 0px 0;
     flex-direction: column;
     overflow-x: auto; 
     height: 100vh;    
-    overflow-y: hidden; 
 }
 
 .container {
-    width: 1500px; /* Set a fixed width for the container */
+    width: 100%;
+    max-width: 1500px;
     margin: 0 auto;
     text-align: center;
     display: flex;
@@ -126,132 +121,98 @@ body {
     overflow: hidden;
 }
 
-h2 {
-    margin-bottom: 70px;
+/* Center the main header and title */
+h1 {
+    margin-bottom: 20px;
     text-align: center;
-    color: black;
 }
 
-/* Flexbox layout for all days in a single row */
-.planner {
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/***************** MEAL PLAN *****************/
+
+.food-planner {
     display: flex;
-    gap: 7px;
-    margin-top: 20px;
-    justify-content: space-between;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 1200px;
     align-items: flex-start;
-    flex-wrap: nowrap; /* Ensure no wrapping to a second line */
-    width: 1500px; /* Match the fixed width of the container */
-    overflow-x: auto; /* Allow horizontal scrolling for planner */
+    padding: 10px;
 }
 
-.day {
+.meal-plan {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1 1 13%;
-    height: auto;
+    padding: 20px;
+    width: 100%; 
+    max-width: 500px; 
     box-sizing: border-box;
-    overflow: hidden;
-    min-width: 200px; /* Prevent day columns from becoming too small */
+    margin-bottom: 20px;
 }
 
-.day h2 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 18px;
+.meal-plan h2 {
     background-color: #4a6741;
     color: white;
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
-    width: 100%;
+    margin-bottom: 15px;
     text-align: center;
 }
 
-.container .planner .day .task-input {
-    padding: 5px;               
-    margin-right: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-    height: auto;
-    line-height: 1.2em;
-    font-size: 14px;
-    resize: none;
-    flex-shrink: 0;
-    flex-grow: 0;
-    box-sizing: border-box;
-    min-height: 30px;
-    overflow: hidden;
-}
-
-.add-btn {
-    font-family: 'Fraunces', sans-serif;  
-    padding: 5px 10px;
-    background-color: #4a6741;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 5px;
-    width: 50%;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 0;
-    width: 100%; 
-    overflow-y: auto;  
-    flex-grow: 1;
-    max-height: 170px;  
-}
-
-
-li {
+.day {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 8px;
-    width: 100%;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
     box-sizing: border-box;
 }
+.day h3 {
+    background-color: #4a6741;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-align: center;
+    margin: 0;
+    flex: 0 0 100px; 
+}
 
-input[type="text"] {
+
+.meal-input {
     flex-grow: 1;
-    padding: 5px;
-    margin-right: 5px;
+    margin-left: 15px;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    width: 100%;
 }
 
-.check-btn, .delete-btn {
-    flex-shrink: 0;
-    background-color: #374f2f;
+.clear-btn {
+    width: 30%;
+    text-align: center;
+    background-color: #c60000; /* Red color for the clear button */
+    color: white;
     border: none;
-    color: white;
-    cursor: pointer;
-    padding: 5px;
+    padding: 10px 15px;
     border-radius: 5px;
-    margin-left: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
-.check-btn {
-    background-color: #4a6741; 
+.clear-btn:hover {
+    background-color: #b70000; /* Darker red on hover */
 }
 
-.delete-btn {
-    background-color: #e0473c; 
-}
-
-.checked {
-    background-color: #4a6741;
-    color: white;
-    text-decoration: line-through;
-}
