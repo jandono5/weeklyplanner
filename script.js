@@ -65,12 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
-
-
-
-
 function addTaskToDay(dayDiv, taskText, isChecked = false) {
     const taskList = dayDiv.querySelector('.task-list');
     const li = document.createElement('li');
@@ -146,3 +140,18 @@ function loadTasksFromLocalStorage() {
         });
     }
 }
+
+
+// clear all button
+document.getElementById('clear-weekly-planner').addEventListener('click', function () {
+  // clearing all task lists
+    const taskLists = document.querySelectorAll('.task-list');
+    taskLists.forEach(taskList => {
+        // clearing all tasks within the list
+        taskList.innerHTML = '';
+    })
+  
+   // clearing local storage
+    localStorage.removeItem('weeklyPlanner');
+
+});
