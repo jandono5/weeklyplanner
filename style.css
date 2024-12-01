@@ -127,21 +127,41 @@ body {
 }
 
 h2 {
-    margin-bottom: 70px;
+    margin-bottom: 30px;
     text-align: center;
     color: black;
 }
 
-/* Flexbox layout for all days in a single row */
+.clear-button {
+    text-align: center;
+    background-color: #c60000; 
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.clear-button:hover {
+    background-color: #b70000; 
+}
+
+
 .planner {
     display: flex;
     gap: 7px;
     margin-top: 20px;
     justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: nowrap; /* Ensure no wrapping to a second line */
-    width: 1500px; /* Match the fixed width of the container */
-    overflow-x: auto; /* Allow horizontal scrolling for planner */
+    flex-wrap: nowrap; 
+    width: 1500px; 
+    overflow-x: auto;
 }
 
 .day {
@@ -208,7 +228,7 @@ ul {
     width: 100%; 
     overflow-y: auto;  
     flex-grow: 1;
-    max-height: 170px;  
+    max-height: 300px;  
 }
 
 
