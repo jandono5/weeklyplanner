@@ -1,1 +1,3 @@
-Just a lil' website for my girlfriend so she can keep organised (her name's Bea and mine's Jay, it isn't just a very forward title)🤖
+Just a lil' website for my girlfriend so she can keep organised...
+
+Together our name's are Bea & Jay, hence the BJ title - it's not intentionally dirty I promise 
