@@ -1,3 +1,3 @@
 Just a lil' website for my girlfriend so she can keep organised...
 
-Together our name's are Bea & Jay, hence the BJ title - it's not intentionally dirty I promise 
+Together our name's are Bea & Jay, hence the BJ title - it's not intentionally dirty I promise! 
