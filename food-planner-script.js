@@ -134,7 +134,7 @@ function loadMealPlan() {
     // Load lunch inputs
     document.querySelectorAll('.lunch-input').forEach(input => {
         const day = input.parentElement.querySelector('h3').textContent.toLowerCase();
-        if (savedMeals.lunch[day]) {
+        if (savedMeals.lunch && savedMeals.lunch[day]) {
             input.value = savedMeals.lunch[day];
         }
     });
@@ -142,7 +142,7 @@ function loadMealPlan() {
     // Load dinner inputs
     document.querySelectorAll('.dinner-input').forEach(input => {
         const day = input.parentElement.querySelector('h3').textContent.toLowerCase();
-        if (savedMeals.dinner[day]) {
+        if (savedMeals.dinner && savedMeals.dinner[day]) {
             input.value = savedMeals.dinner[day];
         }
     });
