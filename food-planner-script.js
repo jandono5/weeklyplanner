@@ -1,77 +1,149 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Load meals from local storage when the page loads
+    // Load saved meal plans
     loadMealPlan();
 
-    // Add event listener to all meal inputs
+    // Get references to the meal plan button and dropdown links
+    const mealPlanButton = document.querySelector('.dropbtn-meal');
+    const showLunchLink = document.getElementById('show-lunch');
+    const showDinnerLink = document.getElementById('show-dinner');
+    const mealDropdownContent = document.querySelector('.dropdown-content-meal');
+
+    // Get references to the main dropdown button and links
+    const mainDropdownButton = document.querySelector('.dropbtn');
+    const mainDropdownContent = document.querySelector('.dropdown-content');
+    const mainDefaultLink = document.querySelector('.default-link');
+
+    // Function to update the meal plan dropdown options
+    function updateMealDropdown(selectedPlan) {
+        if (selectedPlan === 'lunch') {
+            showLunchLink.classList.add('hidden'); // Hide "lunch plan" option
+            showDinnerLink.classList.remove('hidden'); // Show "dinner plan" option
+        } else if (selectedPlan === 'dinner') {
+            showLunchLink.classList.remove('hidden'); // Show "lunch plan" option
+            showDinnerLink.classList.add('hidden'); // Hide "dinner plan" option
+        }
+    }
+
+    // Function to update the main dropdown options
+    function updateMainDropdown(selectedLink) {
+        const mainLinks = mainDropdownContent.querySelectorAll('a');
+        mainLinks.forEach(link => {
+            if (link === selectedLink) {
+                link.classList.add('hidden'); // Hide the selected link
+            } else {
+                link.classList.remove('hidden'); // Show the other link
+            }
+        });
+    }
+
+    // Add event listeners to meal plan dropdown links
+    showLunchLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        showMealPlan('lunch');
+        mealPlanButton.textContent = 'lunch plan'; // Update button text (lowercase)
+        updateMealDropdown('lunch'); // Update dropdown options
+    });
+
+    showDinnerLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        showMealPlan('dinner');
+        mealPlanButton.textContent = 'dinner plan'; // Update button text (lowercase)
+        updateMealDropdown('dinner'); // Update dropdown options
+    });
+
+    // Add event listeners to main dropdown links
+    mainDropdownContent.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function (e) {
+            // Update the button text
+            mainDropdownButton.textContent = this.textContent.toLowerCase();
+
+            // Update the dropdown options
+            updateMainDropdown(this);
+
+            // Allow the default navigation behavior
+            // No need to call e.preventDefault() here
+        });
+    });
+
+    // Save inputs when the user types
     const mealInputs = document.querySelectorAll('.meal-input');
     mealInputs.forEach(input => {
-        // Save changes when the user types in a meal input field
         input.addEventListener('input', saveMealPlan);
     });
-});
 
-// Save the meal plan to local storage
-function saveMealPlan() {
-    const meals = {};
-    const mealInputs = document.querySelectorAll('.meal-input');
-
-    mealInputs.forEach(input => {
-        const day = input.parentElement.querySelector('h3').textContent.toLowerCase(); // Get the day name
-        meals[day] = input.value; // Save the input value under the day name
+    // Clear all inputs
+    document.getElementById('clear-meal-plan').addEventListener('click', function () {
+        mealInputs.forEach(input => {
+            input.value = '';
+        });
+        localStorage.removeItem('mealPlan');
     });
 
-    localStorage.setItem('mealPlan', JSON.stringify(meals)); // Store the meals as a JSON string
+    // Set the initial button text and dropdown options based on the currently visible plan
+    const lunchPlan = document.getElementById('lunch-plan');
+    const dinnerPlan = document.getElementById('dinner-plan');
+    if (!lunchPlan.classList.contains('hidden')) {
+        mealPlanButton.textContent = 'lunch plan'; // Set initial button text (lowercase)
+        updateMealDropdown('lunch');
+    } else if (!dinnerPlan.classList.contains('hidden')) {
+        mealPlanButton.textContent = 'dinner plan'; // Set initial button text (lowercase)
+        updateMealDropdown('dinner');
+    }
+
+    // Set the initial main dropdown options
+    updateMainDropdown(mainDefaultLink);
+});
+
+// Show the selected meal plan and hide the other
+function showMealPlan(plan) {
+    const lunchPlan = document.getElementById('lunch-plan');
+    const dinnerPlan = document.getElementById('dinner-plan');
+
+    if (plan === 'lunch') {
+        lunchPlan.classList.remove('hidden');
+        dinnerPlan.classList.add('hidden');
+    } else if (plan === 'dinner') {
+        lunchPlan.classList.add('hidden');
+        dinnerPlan.classList.remove('hidden');
+    }
 }
 
-// Load the meal plan from local storage
-function loadMealPlan() {
-    const savedMeals = JSON.parse(localStorage.getItem('mealPlan')) || {}; // Parse saved meals or use an empty object
-    const mealInputs = document.querySelectorAll('.meal-input');
+// Save meal plans to local storage
+function saveMealPlan() {
+    const meals = { lunch: {}, dinner: {} };
 
-    mealInputs.forEach(input => {
-        const day = input.parentElement.querySelector('h3').textContent.toLowerCase(); // Get the day name
-        if (savedMeals[day]) {
-            input.value = savedMeals[day]; // Set the input value if it exists in savedMeals
+    // Save lunch inputs
+    document.querySelectorAll('.lunch-input').forEach(input => {
+        const day = input.parentElement.querySelector('h3').textContent.toLowerCase();
+        meals.lunch[day] = input.value;
+    });
+
+    // Save dinner inputs
+    document.querySelectorAll('.dinner-input').forEach(input => {
+        const day = input.parentElement.querySelector('h3').textContent.toLowerCase();
+        meals.dinner[day] = input.value;
+    });
+
+    localStorage.setItem('mealPlan', JSON.stringify(meals));
+}
+
+// Load meal plans from local storage
+function loadMealPlan() {
+    const savedMeals = JSON.parse(localStorage.getItem('mealPlan')) || { lunch: {}, dinner: {} };
+
+    // Load lunch inputs
+    document.querySelectorAll('.lunch-input').forEach(input => {
+        const day = input.parentElement.querySelector('h3').textContent.toLowerCase();
+        if (savedMeals.lunch[day]) {
+            input.value = savedMeals.lunch[day];
+        }
+    });
+
+    // Load dinner inputs
+    document.querySelectorAll('.dinner-input').forEach(input => {
+        const day = input.parentElement.querySelector('h3').textContent.toLowerCase();
+        if (savedMeals.dinner[day]) {
+            input.value = savedMeals.dinner[day];
         }
     });
 }
-
-
-document.getElementById('clear-meal-plan').addEventListener('click', function () {
-    const mealInputs = document.querySelectorAll('.meal-input');
-    mealInputs.forEach(input => {
-        input.value = ""; // Clear the text box
-    });
-
-    localStorage.removeItem('mealPlan'); // Remove saved meal plan from local storage
-});
-
-// drop down
-document.addEventListener('DOMContentLoaded', function () {
-    const dropdown = document.querySelector('.dropdown');
-    const dropbtn = dropdown.querySelector('.dropbtn');
-    const defaultLink = dropdown.querySelector('.default-link');
-    const dropdownContent = dropdown.querySelector('.dropdown-content');
-
-    // Set the button's text to match the default link on page load
-    dropbtn.textContent = defaultLink.textContent;
-
-    // Hide the default link when the dropdown is hovered
-    dropdown.addEventListener('mouseover', function () {
-        defaultLink.classList.add('hidden'); // Hide the default link
-    });
-
-    // Show the default link again when the dropdown is not hovered
-    dropdown.addEventListener('mouseleave', function () {
-        defaultLink.classList.remove('hidden'); // Show the default link
-    });
-
-    // Update button text dynamically if another link is clicked
-    const dropdownLinks = dropdown.querySelectorAll('.dropdown-content a');
-    dropdownLinks.forEach(link => {
-        link.addEventListener('click', function () {
-            dropbtn.textContent = this.textContent;
-        });
-    });
-});
-
