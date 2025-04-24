@@ -1,45 +1,44 @@
 /* Dark Green - #428643 */
 @font-face {
-  font-family: 'Fraunces';
-  src: url('/Users/jayanderson/Desktop/Bea Week Summary');
+  font-family: "Fraunces";
+  src: url("/Users/jayanderson/Desktop/Bea Week Summary");
   font-weight: normal;
   font-style: normal;
 }
 
-
 .default-link {
   font-weight: bold;
-  background-color: #ddd; 
+  background-color: #ddd;
 }
 
 .dropdown-content a.default-link:hover {
-  background-color: #ccc; 
+  background-color: #ccc;
 }
 
 .hidden {
-  display: none !important; 
+  display: none !important;
 }
 
 /* Dropdown Button */
 .dropbtn {
   background-color: #f8f8fb;
   padding: 16px;
-  font-family: 'Fraunces', sans-serif;  
+  font-family: "Fraunces", sans-serif;
   font-weight: bold;
   font-size: 32px;
   border: none;
-  border-radius: 10px 10px 0 0; 
+  border-radius: 10px 10px 0 0;
   border-bottom: 1px solid #f8f8fb;
-  width: 350px; 
+  width: 350px;
   text-align: center;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 /* Dropdown Container */
 .dropdown {
   position: relative;
   display: inline-block;
-  font-family: 'Fraunces', sans-serif;
+  font-family: "Fraunces", sans-serif;
   font-weight: bold;
   font-size: 32px; /* Matches dropdown button size */
 }
@@ -53,24 +52,26 @@
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   text-align: center;
-  font-family: 'Fraunces', sans-serif;
+  font-family: "Fraunces", sans-serif;
   font-weight: bold;
-  border-radius: 0 0 10px 10px; 
+  border-radius: 0 0 10px 10px;
   overflow: hidden;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  font-family: 'Fraunces', sans-serif;
+  font-family: "Fraunces", sans-serif;
   font-weight: bold;
   font-size: 18px;
-  color: black; 
-  padding: 12px 0; 
-  text-decoration: none; 
+  color: black;
+  padding: 12px 0;
+  text-decoration: none;
   display: block;
-  width: 100%; 
-  box-sizing: border-box; 
-  transition: background-color 0.3s ease, color 0.3s ease; 
+  width: 100%;
+  box-sizing: border-box;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Change color of dropdown links on hover */
@@ -82,7 +83,7 @@
 /* Highlight for default link */
 .default-link {
   font-weight: bold;
-  background-color: #ddd; 
+  background-color: #ddd;
 }
 
 .dropdown-content a.default-link:hover {
@@ -100,178 +101,185 @@
   color: white;
 }
 
-
 body {
-    font-family: 'Fraunces', sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0;
-    padding-top: 20px;
-    flex-direction: column;
-    overflow-x: auto; 
-    height: 100vh;    
-    overflow-y: hidden; 
+  font-family: "Fraunces", sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding-top: 20px;
+  flex-direction: column;
+  overflow-x: auto;
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 .container {
-    width: 1500px; /* Set a fixed width for the container */
-    margin: 0 auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
+  width: 1500px; /* Set a fixed width for the container */
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 
 h2 {
-    margin-bottom: 30px;
-    text-align: center;
-    color: black;
+  margin-bottom: 30px;
+  text-align: center;
+  color: black;
 }
 
 .clear-button {
-    text-align: center;
-    background-color: #c60000; 
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-    display: block;
+	width: 8%;
+  text-align: center;
+  background-color: #c60000;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  display: block;
 }
 
 .clear-button:hover {
-    background-color: #b70000; 
+  background-color: #b70000;
 }
 
-
 .planner {
-    display: flex;
-    gap: 7px;
-    margin-top: 20px;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: nowrap; 
-    width: 1500px; 
-    overflow-x: auto;
+  display: flex;
+  gap: 7px;
+  margin-top: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  width: 1500px;
+  overflow-x: auto;
 }
 
 .day {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1 1 13%;
-    height: auto;
-    box-sizing: border-box;
-    overflow: hidden;
-    min-width: 200px; /* Prevent day columns from becoming too small */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 13%;
+  height: auto;
+  box-sizing: border-box;
+  overflow: hidden;
+  min-width: 200px; /* Prevent day columns from becoming too small */
 }
 
 .day h2 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 18px;
-    background-color: #4a6741;
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-    width: 100%;
-    text-align: center;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  background-color: #4a6741;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
 }
 
 .container .planner .day .task-input {
-    padding: 5px;               
-    margin-right: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-    height: auto;
-    line-height: 1.2em;
-    font-size: 14px;
-    resize: none;
-    flex-shrink: 0;
-    flex-grow: 0;
-    box-sizing: border-box;
-    min-height: 30px;
-    overflow: hidden;
+  padding: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  height: auto;
+  line-height: 1.2em;
+  font-size: 14px;
+  resize: none;
+  flex-shrink: 0;
+  flex-grow: 0;
+  box-sizing: border-box;
+  min-height: 30px;
+  overflow: hidden;
 }
 
 .add-btn {
-    font-family: 'Fraunces', sans-serif;  
-    padding: 5px 10px;
-    background-color: #4a6741;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 5px;
-    width: 50%;
+  font-family: "Fraunces", sans-serif;
+  padding: 5px 10px;
+  background-color: #4a6741;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+  width: 50%;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 0;
-    width: 100%; 
-    overflow-y: auto;  
-    flex-grow: 1;
-    max-height: 300px;  
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+  width: 100%;
+  overflow-y: auto;
+  flex-grow: 1;
+  max-height: 300px;
 }
 
-
 li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    width: 100%;
-    box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 input[type="text"] {
-    flex-grow: 1;
-    padding: 5px;
-    margin-right: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    width: 100%;
+  flex-grow: 1;
+  padding: 5px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
-.check-btn, .delete-btn {
-    flex-shrink: 0;
-    background-color: #374f2f;
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 5px;
-    margin-left: 5px;
+.check-btn,
+.delete-btn {
+  flex-shrink: 0;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 5px;
 }
 
 .check-btn {
-    background-color: #4a6741; 
+  background-color: #4a6741;
 }
 
 .delete-btn {
-    background-color: #e0473c; 
+  background-color: #e0473c;
 }
 
 .checked {
-    background-color: #4a6741;
-    color: white;
-    text-decoration: line-through;
+  background-color: #4a6741;
+  color: white;
+  text-decoration: line-through;
+}
+
+.task {
+  cursor: move;
+}
+input:focus {
+	outline: none;
+	background-color: #EEE;
+  border: 1px solid #000;
 }

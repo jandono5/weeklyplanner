@@ -1,66 +1,50 @@
 /* Font and color setup */
 @font-face {
-  font-family: 'Fraunces';
-  src: url('/Users/jayanderson/Desktop/Bea Week Summary');
+  font-family: "Fraunces";
+  src: url("/Users/jayanderson/Desktop/Bea Week Summary");
   font-weight: normal;
   font-style: normal;
 }
 
 /***************** DROP DOWN *****************/
-
 .default-link {
   font-weight: bold;
-  background-color: #ddd; 
+  background-color: #ddd;
 }
 
 .dropdown-content a.default-link:hover {
-  background-color: #ccc; 
+  background-color: #ccc;
 }
 
 .hidden {
-  display: none !important; 
+  display: none !important;
 }
 
 /* Dropdown Button */
 .dropbtn {
   background-color: #f8f8fb;
-  color: black;
   padding: 16px;
-  font-family: 'Fraunces', sans-serif;  
+  font-family: "Fraunces", sans-serif;
   font-weight: bold;
   font-size: 32px;
   border: none;
-  border-radius: 10px 10px 0 0; 
+  border-radius: 10px 10px 0 0;
   border-bottom: 1px solid #f8f8fb;
-  width: 350px; 
+  width: 350px;
   text-align: center;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
-
-.dropbtn-meal {
-  background-color: #ffffff;
-  color: black;
-  padding: 1px;
-  font-family: 'Fraunces', sans-serif;  
-  font-weight: bold;
-  font-size: 16px;
-  border: none;
-  border-radius: 10px 10px 0 0; 
-  border-bottom: 1px solid #ffffff;
-  width: 100%; 
-  text-align: center;
-  cursor: pointer; 
-}
-
+/* Dropdown Container */
 .dropdown {
   position: relative;
   display: inline-block;
-  font-family: 'Fraunces', sans-serif;
+  font-family: "Fraunces", sans-serif;
   font-weight: bold;
-  font-size: 32px; 
+  font-size: 32px; /* Matches dropdown button size */
 }
 
+/* Dropdown Content */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -69,38 +53,45 @@
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   text-align: center;
-  font-family: 'Fraunces', sans-serif;
+  font-family: "Fraunces", sans-serif;
   font-weight: bold;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
 }
 
-
+/* Links inside the dropdown */
 .dropdown-content a {
-  font-family: 'Fraunces', sans-serif;
+  font-family: "Fraunces", sans-serif;
   font-weight: bold;
   font-size: 18px;
-  color: black; 
-  padding: 12px 0; 
-  text-decoration: none; 
+  color: black;
+  padding: 12px 0;
+  text-decoration: none;
   display: block;
-  width: 100%; 
-  box-sizing: border-box; 
-  transition: background-color 0.3s ease, color 0.3s ease; 
+  width: 100%;
+  box-sizing: border-box;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
+/* Change color of dropdown links on hover */
 .dropdown-content a:hover {
   background-color: #ddd;
   color: black;
 }
 
+/* Highlight for default link */
 .default-link {
   font-weight: bold;
-  background-color: #ddd; 
+  background-color: #ddd;
 }
 
 .dropdown-content a.default-link:hover {
   background-color: #ccc;
 }
 
+/* Show dropdown content on hover */
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -108,196 +99,157 @@
 /* Change background color of the dropdown button on hover */
 .dropdown:hover .dropbtn {
   background-color: #4a6741;
-  color: white; 
+  color: white;
 }
 
-
 body {
-    font-family: 'Fraunces', sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 0;
-    padding: 0px 0;
-    flex-direction: column;
-    overflow-x: auto; 
-    height: 100vh;    
+  font-family: "Fraunces", sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0px 0;
+  flex-direction: column;
+  overflow-x: auto;
+  height: 100vh;
 }
 
 .container {
-    width: 100%;
-    max-width: 1500px;
-    margin: 0 auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 
 /* Center the main header and title */
 h1 {
-    margin-bottom: 20px;
-    text-align: center;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 h2 {
-    margin-bottom: 20px;
-    text-align: center;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 /***************** MEAL PLAN *****************/
 
 .food-planner {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    margin-top: 10px;
-    width: 100%;
-    max-width: 1200px;
-    align-items: flex-start;
-    padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 1200px;
+  align-items: flex-start;
+  padding: 10px;
 }
 
 .meal-plan {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 100%; 
-    max-width: 500px; 
-    box-sizing: border-box;
-    margin-bottom: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
 .meal-plan h2 {
-    background-color: #4a6741;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    text-align: center;
+  background-color: #4a6741;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .meal-toggle {
-    margin-bottom: 20px;
-    text-align: center;
-    background-color: #4a6741;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    text-align: center;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: #4a6741;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .day {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f8f9fa;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
 .day h3 {
-    background-color: #4a6741;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 3px;
-    text-align: center;
-    margin: 0;
-    flex: 0 0 100px; 
+  background-color: #4a6741;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-align: center;
+  margin: 0;
+  flex: 0 0 100px;
 }
-
 
 .meal-input {
-    flex-grow: 1;
-    margin-left: 15px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+  flex-grow: 1;
+  margin-left: 15px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.meal-btn {
+	outline: none;
+  background-color: #4a6741;
+  color: white;
+  padding: 6px;
+  font-family: "Fraunces", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px 10px 10px 10px;
+  border-bottom: 10px solid #ffffff;
+  width: 30%;
+  text-align: center;
+  cursor: pointer;
 }
 
+.meal-btn:hover {
+	background-color: #1d3706;
+}
+
+.meal-btn:focus {
+	background-color: black;
+}
 .clear-btn {
-    width: 30%;
-    text-align: center;
-    background-color: #c60000; /* Red color for the clear button */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+  width: 30%;
+  text-align: center;
+  background-color: #c60000;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .clear-btn:hover {
-    background-color: #b70000; /* Darker red on hover */
-}
-
-/******* Meal Plan Dropdown **********/
-
-.dropdown-meal {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.dropbtn-meal {
-    background-color: #4a6741;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-family: 'Fraunces', sans-serif;
-    font-weight: bold;
-}
-
-.dropdown-content-meal {
-    display: none;
-    position: absolute;
-    background-color: #f8f8fb;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    width: 100%;
-    text-align: center;
-}
-
-.dropdown-content-meal a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-family: 'Fraunces', sans-serif;
-    font-weight: bold;
-}
-
-.dropdown-content-meal a:hover {
-    background-color: #ddd;
-}
-
-.dropdown-meal:hover .dropdown-content-meal {
-    display: block;
-}
-
-/* Meal Plan Content */
-.meal-plan-content {
-    display: block;
-}
-
-.hidden {
-    display: none;
+  background-color: #b70000; /* Darker red on hover */
 }

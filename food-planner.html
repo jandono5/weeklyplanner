@@ -1,111 +1,230 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Planner</title>
-    <!-- Favicon as an emoji -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext x='0' y='25' font-size='24'%3E❤️%3C/text%3E%3C/svg%3E">
-    <link href="https://github.com/undercasetype/Fraunces/releases/tag/1.000" rel="stylesheet">
-    <link rel="stylesheet" href="food-planner-style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>meal plan!</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext x='0' y='25' font-size='24'%3E❤️%3C/text%3E%3C/svg%3E"
+    />
+    <link
+      href="https://github.com/undercasetype/Fraunces/releases/tag/1.000"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="food-planner-style.css" />
+  </head>
+  <body>
     <div class="container">
-        <!-- Drop Down-->
-        <div class="dropdown">
-            <button class="dropbtn">bj meal plan!</button>
-            <div class="dropdown-content">
-                <a class="default-link" href="food-planner.html">bj meal plan!</a>
-                <a href="index.html">bj weekly planner!</a>
-            </div>
-        </div>
         
-        <h2>like word but a lil' more personal...</h2>
-
-        <div class="food-planner">
-            <!-- Meal Plan Dropdown -->
-            <div class="meal-plan">
-                <div class="dropdown-meal">
-                    <button class="dropbtn-meal">meal plan</button>
-                    <div class="dropdown-content-meal">
-                        <a href="#" id="show-lunch">lunch plan</a>
-                        <a href="#" id="show-dinner">dinner plan</a>
-                    </div>
-                </div>
-
-                <!-- Lunch Plan -->
-                <div id="lunch-plan" class="meal-plan-content">
-                    <div class="days">
-                        <div class="day">
-                            <h3>monday</h3>
-                            <input type="text" class="meal-input lunch-input" placeholder="monday lunch...">
-                        </div>
-                        <div class="day">
-                            <h3>tuesday</h3>
-                            <input type="text" class="meal-input lunch-input" placeholder="tuesday lunch...">
-                        </div>
-                        <div class="day">
-                            <h3>wednesday</h3>
-                            <input type="text" class="meal-input lunch-input" placeholder="wednesday lunch...">
-                        </div>
-                        <div class="day">
-                            <h3>thursday</h3>
-                            <input type="text" class="meal-input lunch-input" placeholder="thursday lunch...">
-                        </div>
-                        <div class="day">
-                            <h3>friday</h3>
-                            <input type="text" class="meal-input lunch-input" placeholder="friday lunch...">
-                        </div>
-                        <div class="day">
-                            <h3>saturday</h3>
-                            <input type="text" class="meal-input lunch-input" placeholder="saturday lunch...">
-                        </div>
-                        <div class="day">
-                            <h3>sunday</h3>
-                            <input type="text" class="meal-input lunch-input" placeholder="sunday lunch...">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dinner Plan -->
-                <div id="dinner-plan" class="meal-plan-content hidden">
-                    <div class="days">
-                        <div class="day">
-                            <h3>monday</h3>
-                            <input type="text" class="meal-input dinner-input" placeholder="monday dinner...">
-                        </div>
-                        <div class="day">
-                            <h3>tuesday</h3>
-                            <input type="text" class="meal-input dinner-input" placeholder="tuesday dinner...">
-                        </div>
-                        <div class="day">
-                            <h3>wednesday</h3>
-                            <input type="text" class="meal-input dinner-input" placeholder="wednesday dinner...">
-                        </div>
-                        <div class="day">
-                            <h3>thursday</h3>
-                            <input type="text" class="meal-input dinner-input" placeholder="thursday dinner...">
-                        </div>
-                        <div class="day">
-                            <h3>friday</h3>
-                            <input type="text" class="meal-input dinner-input" placeholder="friday dinner...">
-                        </div>
-                        <div class="day">
-                            <h3>saturday</h3>
-                            <input type="text" class="meal-input dinner-input" placeholder="saturday dinner...">
-                        </div>
-                        <div class="day">
-                            <h3>sunday</h3>
-                            <input type="text" class="meal-input dinner-input" placeholder="sunday dinner...">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Clear Button -->
-                <button id="clear-meal-plan" class="clear-btn">clear all</button>
-            </div>
+        <div class="dropdown">
+          <button class="dropbtn">bj meal plan</button>
+          <div class="dropdown-content">
+            <a class="default-link" href="index.html">bj weekly planner</a>
+          </div>
         </div>
+    
+      <h2>yummy yummy in my tummy</h2>
+
+      <div class="food-planner">
+        <!-- Meal Plan Buttons -->
+        <div class="meal-plan">
+          <button class="meal-btn" id="show-breakfast">breakfast</button>
+          <button class="meal-btn" id="show-lunch">lunch</button>
+          <button class="meal-btn" id="show-dinner">dinner</button>
+
+          <!-- Breakfast Plan -->
+          <div id="breakfast-plan" class="meal-plan-content hidden">
+            <div class="days">
+              <div class="day">
+                <h3>monday</h3>
+                <input
+                  type="text"
+                  class="meal-input breakfast-input"
+                  placeholder="monday breakfast..."
+                />
+              </div>
+              <div class="day">
+                <h3>tuesday</h3>
+                <input
+                  type="text"
+                  class="meal-input breakfast-input"
+                  placeholder="tuesday breakfast..."
+                />
+              </div>
+              <div class="day">
+                <h3>wednesday</h3>
+                <input
+                  type="text"
+                  class="meal-input breakfast-input"
+                  placeholder="wednesday breakfast..."
+                />
+              </div>
+              <div class="day">
+                <h3>thursday</h3>
+                <input
+                  type="text"
+                  class="meal-input breakfast-input"
+                  placeholder="thursday breakfast..."
+                />
+              </div>
+              <div class="day">
+                <h3>friday</h3>
+                <input
+                  type="text"
+                  class="meal-input breakfast-input"
+                  placeholder="friday breakfast..."
+                />
+              </div>
+              <div class="day">
+                <h3>saturday</h3>
+                <input
+                  type="text"
+                  class="meal-input breakfast-input"
+                  placeholder="saturday breakfast..."
+                />
+              </div>
+              <div class="day">
+                <h3>sunday</h3>
+                <input
+                  type="text"
+                  class="meal-input breakfast-input"
+                  placeholder="sunday breakfast..."
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Lunch Plan -->
+          <div id="lunch-plan" class="meal-plan-content hidden">
+            <div class="days">
+              <div class="day">
+                <h3>monday</h3>
+                <input
+                  type="text"
+                  class="meal-input lunch-input"
+                  placeholder="monday lunch..."
+                />
+              </div>
+              <div class="day">
+                <h3>tuesday</h3>
+                <input
+                  type="text"
+                  class="meal-input lunch-input"
+                  placeholder="tuesday lunch..."
+                />
+              </div>
+              <div class="day">
+                <h3>wednesday</h3>
+                <input
+                  type="text"
+                  class="meal-input lunch-input"
+                  placeholder="wednesday lunch..."
+                />
+              </div>
+              <div class="day">
+                <h3>thursday</h3>
+                <input
+                  type="text"
+                  class="meal-input lunch-input"
+                  placeholder="thursday lunch..."
+                />
+              </div>
+              <div class="day">
+                <h3>friday</h3>
+                <input
+                  type="text"
+                  class="meal-input lunch-input"
+                  placeholder="friday lunch..."
+                />
+              </div>
+              <div class="day">
+                <h3>saturday</h3>
+                <input
+                  type="text"
+                  class="meal-input lunch-input"
+                  placeholder="saturday lunch..."
+                />
+              </div>
+              <div class="day">
+                <h3>sunday</h3>
+                <input
+                  type="text"
+                  class="meal-input lunch-input"
+                  placeholder="sunday lunch..."
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Dinner Plan -->
+          <div id="dinner-plan" class="meal-plan-content hidden">
+            <div class="days">
+              <div class="day">
+                <h3>monday</h3>
+                <input
+                  type="text"
+                  class="meal-input dinner-input"
+                  placeholder="monday dinner..."
+                />
+              </div>
+              <div class="day">
+                <h3>tuesday</h3>
+                <input
+                  type="text"
+                  class="meal-input dinner-input"
+                  placeholder="tuesday dinner..."
+                />
+              </div>
+              <div class="day">
+                <h3>wednesday</h3>
+                <input
+                  type="text"
+                  class="meal-input dinner-input"
+                  placeholder="wednesday dinner..."
+                />
+              </div>
+              <div class="day">
+                <h3>thursday</h3>
+                <input
+                  type="text"
+                  class="meal-input dinner-input"
+                  placeholder="thursday dinner..."
+                />
+              </div>
+              <div class="day">
+                <h3>friday</h3>
+                <input
+                  type="text"
+                  class="meal-input dinner-input"
+                  placeholder="friday dinner..."
+                />
+              </div>
+              <div class="day">
+                <h3>saturday</h3>
+                <input
+                  type="text"
+                  class="meal-input dinner-input"
+                  placeholder="saturday dinner..."
+                />
+              </div>
+              <div class="day">
+                <h3>sunday</h3>
+                <input
+                  type="text"
+                  class="meal-input dinner-input"
+                  placeholder="sunday dinner..."
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Clear Button -->
+          <button id="clear-meal-plan" class="clear-btn">clear all</button>
+        </div>
+      </div>
     </div>
     <script src="food-planner-script.js"></script>
-</body>
+  </body>
 </html>
