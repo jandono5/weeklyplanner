@@ -123,3 +123,12 @@ function loadMealPlan() {
 		}
 	});
 }
+
+const mealBtnList = document.querySelectorAll(".meal-btn");
+
+mealBtnList.forEach((mealBtn) => {
+	mealBtn.addEventListener("click", () => {
+		document.querySelector(".black-bg")?.classList.remove("black-bg");
+		mealBtn.classList.add("black-bg");
+	});
+});

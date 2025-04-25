@@ -212,7 +212,7 @@ h2 {
   box-sizing: border-box;
 }
 .meal-btn {
-	outline: none;
+  outline: none;
   background-color: #4a6741;
   color: white;
   padding: 6px;
@@ -228,12 +228,18 @@ h2 {
 }
 
 .meal-btn:hover {
-	background-color: #1d3706;
+  background-color: #1d3706;
 }
 
 .meal-btn:focus {
+  background-color: black;
+}
+
+
+.black-bg {
 	background-color: black;
 }
+
 .clear-btn {
   width: 30%;
   text-align: center;
@@ -252,4 +258,10 @@ h2 {
 
 .clear-btn:hover {
   background-color: #b70000; /* Darker red on hover */
+}
+
+input:focus {
+  outline: none;
+  background-color: #eee;
+  border: 1px solid #000;
 }
