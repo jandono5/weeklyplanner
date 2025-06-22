@@ -1,3 +1,1 @@
-Just a lil' website for my girlfriend so she can keep organised...
-
-Together our name's are Bea & Jay, hence the BJ title - it's not intentionally dirty I promise! 
+A website aiding you in having the most organised week possible, from daily tasks to meal prepping! That's all there is to it really. 
