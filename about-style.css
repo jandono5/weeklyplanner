@@ -1,0 +1,153 @@
+body {
+  font-family: "Fraunces", sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.about-container {
+  max-width: 700px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  margin: 20px 0;
+}
+
+.centre {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+h1 {
+  color: black;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.contact {
+  background-color: #f0f2f5;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+
+.contact p {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #4a6741;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #2c3e27;
+}
+
+.link-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  background-color: #4a6741;
+  color: #f8f8fb;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #3a552f;
+  color: white;
+}
+/*** ABOUT LINK ***/
+.about-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  margin: 0;
+}
+
+.about-link a {
+  color: black;
+  text-decoration: none;
+  font-family: "Fraunces", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 0.5em 1em;
+  background-color: rgba(248, 248, 251, 0.8);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.about-link a:hover {
+  color: #428643;
+  background-color: rgba(248, 248, 251, 0.95);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 25px;
+    margin: 15px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .link-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-button {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 20px 15px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .contact {
+    padding: 15px;
+  }
+}
